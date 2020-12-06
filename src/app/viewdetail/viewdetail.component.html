@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <nav>
+        <ul class="nav nav-pills">
+            <li><h3>Blood Donor Management System (BDMS)</h3></li>
+            <button class="btnAllDonor" routerLink="/alldonor"><li role="presentation"  >All Donors</li></button>
+            <button class="btnNewDonor" routerLink="/register"><li role="presentation"  >Register</li></button>
+            <button class="btnAddRecord" routerLink="/addrecord"><li role="presentation" >Add Record</li></button>
+            <button class="btnSearch"  routerLink="/searchblood"><li role="presentation" >Search Blood</li></button>
+            <button class="btnLogout" routerLink="/login"><li role="presentation" >Log out</li></button>
+        </ul>
+    </nav>
+    <div class="container">
+        <div class="panel">
+            <div class="panel-body">
+            <form *ngFor="let d of donor">
+                <div class="row">
+                    <div class="label1 col-sm-6">
+                        <label>ID :{{d.id}}</label><br>
+                        <label>Name :{{d.name}}</label><br>
+                        <label>Date Of Birth :{{d.dateOfBirth}}</label><br>
+                        <label>Blood Type :{{d.bloodType}}</label><br>
+                        <label>Gender :{{d.gender}}</label><br>
+                    </div>
+                    <div class="label2 col-sm-6">
+                        <label>Main Phone No :{{d.mainPhone}}</label><br>
+                        <label>Home Phone No :{{d.homePhone}}</label><br>
+                        <label>Address :{{d.address}}</label><br>
+                        <label>Registration Date:{{d.registerDate}}</label><br>
+                        <label>Last Donation Date :{{d.lastDonationDate}}</label><br>
+
+                    </div>
+                </div>
+                <button type="button" class="btn btn-default" routerLink="/alldonor">Back</button>
+            </form>
+          </div>
+        </div>
+    </div>
+</body>
+</html>

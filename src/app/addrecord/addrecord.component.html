@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <nav>
+        <ul class="nav  nav-pills">
+            <li><h3>Blood Donor Management System (BDMS)</h3></li>
+            <button class="btnAllDonor" routerLink="/alldonor"><li role="presentation"  >All Donors</li></button>
+            <button class="btnNewDonor" routerLink="/register"><li role="presentation"  >Register</li></button>
+            <button class="btnAddRecord" routerLink="/addrecord"><li role="presentation" >Add Record</li></button>
+            <button class="btnSearch"  routerLink="/searchblood"><li role="presentation" >Search Blood</li></button>
+            <button class="btnLogout" routerLink="/login"><li role="presentation" >Log out</li></button>
+        </ul>
+    </nav>
+<div class="container">
+    <div class="panel">
+        <div class="row">
+            <div class="panel-body">
+                <form  ngForm #myForm="ngForm" (ngSubmit)="summit()">
+                    <h4>Adding New Record</h4>
+                  <div class="form-group label1">
+                    <label for="donorId">Donor Id :</label>
+                    <input type="text" name="donorId" id="donorId" class="form-group" required>
+                  </div>
+                    <div class="form-group label2">
+                        <label for="donation-date">Donation Date :</label>
+                        <input type="date" name="d-date" id="donation-date" class="form-group" required>
+                    </div>
+                    <button type="button" class="btn btnCancel" routerLink="/alldonor">Cancel</button>
+                    <button type="submit" class="btn btnAdd" [disabled]="myForm.invalid">Add</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

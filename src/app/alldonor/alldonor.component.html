@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<nav>
+  <ul class="nav  nav-pills">
+    <li><h3>Blood Donor Management System (BDMS)</h3></li>
+    <button class="btnAllDonor" routerLink="/alldonor"><li role="presentation"  >All Donors</li></button>
+    <button class="btnNewDonor" routerLink="/register"><li role="presentation"  >Register</li></button>
+    <button class="btnAddRecord" routerLink="/addrecord"><li role="presentation" >Add Record</li></button>
+    <button class="btnSearch"  routerLink="/searchblood"><li role="presentation" >Search Blood</li></button>
+    <button class="btnLogout" routerLink="/login"><li role="presentation" >Log out</li></button>
+  </ul>
+</nav>
+<br>
+<div class="container">
+  <div class="panel">
+    <div class="columns">
+      <form class="subHeading"  >
+        <div class="form-group">
+          <label for="namelb" class="namelb">Name :</label>
+          <input type="text" name="namelb" id="namelb" class="form-control" >
+
+          <label  class="gender">Gender :</label>
+
+          <input type="radio" id="Male" name="male" value="Male" checked>
+          <label for="Male">Male </label>
+
+          <input type="radio" id="Female" name="female" value="female">
+          <label for="Female">Female </label>
+
+          <button type="submit" class="btn searchBtn">Search</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<br><br>
+<div class="container">
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <table class="table table-bordered table-striped">
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Blood Type</th>
+          <th>Actions</th>
+        </tr>
+        <tr *ngFor="let d of donor">
+          <td>{{d.id}}</td>
+          <td>{{d.name}}</td>
+          <td>{{d.bloodType}}</td>
+          <td>
+            <button type="submit" class="btn btn-default" data-toggle="modal" data-target="#update" data-whatever="" routerLink="/updatedonor/{{d.id}}" routerLinkActive="active">Update</button>
+            <button type="submit" class="btn btn-default" data-toggle="modal" data-target="#delete" data-whatever="" (click)="onDelete(close, d.id)">Delete</button>
+            <button type="submit" class="btn btn-default" data-toggle="modal" data-target="#viewdetail" data-whatever="" routerLink="/viewdetail/{{d.id}}">Details</button>
+            <button type="submit" class="btn btn-default" data-toggle="modal" data-target="#record" data-whatever="" routerLink="/record/{{d.id}}">Record</button>
+
+            <div class="modal fade"  tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" >Delete Donor Information</h4>
+                  </div>
+                  <div class="modal-body">
+                    <p>The selected will be deleted.Are you sure?</p>
+                    <div class="modal-footer">
+                      <button>Agree</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+
+      </table>
+    </div>
+  </div>
+</div>
+</body>
+
+<script>
+  $(function () {
+    setTimeout(function () {
+      $(".alert").fadeOut();
+    },1000)
+  })
+</script>
+</html>

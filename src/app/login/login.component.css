@@ -1,0 +1,60 @@
+.container{
+    margin: 3% 0% 10% 10%;
+}
+        .panel-body{
+            width:500px;
+          height: 320px;
+            border-color:brown;
+            border-radius: 5px;
+            margin:auto;
+            box-shadow: 1px 2px 4px 2px;
+        }
+        form{
+            padding-top: 10px;
+        }
+
+        h4 {margin-bottom: 20px;
+            color: #8B0000;
+            margin-top: 10px;
+            font-weight: bold;
+            text-align: center;
+            font-style: italic;
+          font-family:Arial ;
+        }
+
+        h5{
+            font-style: italic;
+            margin-bottom: 40px;
+            text-align: center;
+            color: #8B0000;
+        }
+        label{
+            margin-left: 19%;
+        }
+        input[type=email]{
+            margin-left: 35px;
+            padding: 3px;
+        }
+        input[type=password]{
+            margin-left: 8px;
+            padding: 3px;
+
+        }
+        .btn{
+            background-color: #8B0000;
+            margin-left: 50%;
+            color: white;
+            margin-bottom: 3%;
+        }
+        img{
+            width: 130px;
+            height: 100px;
+            margin-right: 80px;
+        }
+        p{
+            margin-left: 35%;
+        }
+        .text-danger{
+       text-align: left;
+       padding-left: 50px;
+        }

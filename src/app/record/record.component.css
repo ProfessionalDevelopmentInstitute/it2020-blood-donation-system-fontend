@@ -1,0 +1,82 @@
+.container{
+    margin: 3% 10% 10% 10%;
+}
+h3{
+    color: #8B0000;
+    font-weight: bold;
+    margin-right: 15px;
+    font-size: 22px;
+}
+ul{
+    margin-left: 15%;
+    color: black;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.btnSearch {
+    margin-right: 12px;
+    background-color: gray;
+}
+.btnSearch li{
+    color: white;
+}
+.btnAllDonor {
+    margin-right: 12px;
+    color: white;
+    background-color: #8B0000;
+}
+.btnAllDonor li{
+    color: white;
+}
+.btnNewDonor {
+    margin-right: 12px;
+    background-color: gray;
+    }
+.btnNewDonor li{
+    color: white;
+        }
+.btnLogout {
+    margin-right: 12px;
+    background-color: gray;
+}
+.btnLogout li{
+    color: white;
+}
+.btnAddRecord{
+  margin-right: 12px;
+  background-color: gray;
+}
+.btnAddRecord li {
+  color: white;
+}
+
+.panel-default{
+    box-sizing: border-box;
+    border-color:white;
+    border-radius: 5px;
+    box-shadow: 0.5px 0.5px 2px 2px;
+
+}
+.panel-body{
+    padding: 20px 15px 15px 12px;
+}
+td .btn{
+    background: #8B0000;
+    color:white;
+}
+.btn{
+    color: white;
+}
+.btn-default{
+    background-color: #8B0000 ;
+    text-align: center;
+    margin-left: 40%;
+    font-weight: normal;
+}
+.panel-body a{
+    color: white;
+}
+td,th{
+    border-color:#afb1ae;
+}

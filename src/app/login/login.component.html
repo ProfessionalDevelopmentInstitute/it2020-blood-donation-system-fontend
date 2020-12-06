@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="container">
+    <div class="panel panel-heading">
+        <h4>
+            Blood Donor Management System(BDMS)
+        </h4>
+    </div>
+    <div class="panel-body">
+        <form [formGroup]="loginForm" (ngSubmit)="summit()">
+            <h5>Login</h5>
+            <div class="form-group">
+                <label for="email">Email :</label>
+                <input type="email" name="email" id="email" class="form-group" formControlName="email">
+            </div>
+            <div class="form-group">
+                <label for="password">Password :</label>
+                <input type="password" name="password" id="password" class="form-group" formControlName="password">
+            </div>
+           <button type="submit" class="btn btn-default" [disabled]="loginForm.invalid">Log In</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>

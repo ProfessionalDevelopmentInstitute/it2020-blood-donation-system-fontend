@@ -1,0 +1,94 @@
+.container{
+    margin: 3% 10% 10% 10%;
+}
+
+h3{
+    color:  #8B0000;
+    font-weight: bold;
+    margin-right: 15px;
+    font-size: 22px;
+}
+ul{
+    margin-left: 15%;
+    color: black;
+    padding-top: 20px;
+}
+
+.btnSearch {
+    margin-right: 12px;
+    background-color: gray;
+    color: white;
+}
+.btnAllDonor {
+    margin-right: 12px;
+    color: white;
+    background-color: gray;
+}
+.btnAllDonor li{
+    color: white;
+}
+.btnNewDonor {
+    margin-right: 12px;
+    background-color: gray;
+    }
+.btnNewDonor li{
+    color: white;
+        }
+.btnLogout {
+    margin-right: 12px;
+    background-color: gray;
+}
+.btnLogout li{
+    color: white;
+}
+.btnAddRecord{
+  margin-right: 12px;
+  background-color: #8B0000;
+}
+.btnAddRecord li {
+  color: white;
+}
+.panel-body{
+    width:700px;
+    height: 210px;
+    border-color:brown;
+    border-radius: 5px;
+    margin:auto;
+    box-shadow: 1px 2px 4px 2px;
+    color: black;
+    font-size: 16px;
+}
+h4{
+    text-align: center;
+    color:#8B0000 ;
+    padding-top: 12px;
+}
+label{
+    margin-left: 20%;
+    padding-top: 25px;
+
+}
+input[type=text]{
+  margin-left: 50px;
+  padding:3px;
+}
+input[type=date]{
+    margin-left: 12px;
+    padding:3px;
+}
+.btnCancel {
+    background-color: #8B0000;
+    margin-left: 40%;
+    color: white;
+    font-weight: bold;
+
+}
+.btnAdd{
+    background-color: #8B0000;
+    color: white;
+    font-weight: bold;
+    margin: 10px;
+}
+.panel-body a{
+    color: white;
+}

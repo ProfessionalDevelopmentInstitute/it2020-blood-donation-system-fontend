@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <nav>
+        <ul class="nav  nav-pills">
+            <li><h3>Blood Donor Management System (BDMS)</h3></li>
+            <button class="btnAllDonor" routerLink="/alldonor"><li role="presentation"  >All Donors</li></button>
+            <button class="btnNewDonor" routerLink="/register"><li role="presentation"  >Register</li></button>
+          <button class="btnAddRecord" routerLink="/addrecord"><li role="presentation" >Add Record</li></button>
+            <button class="btnSearch"  routerLink="/searchblood"><li role="presentation" >Search Blood</li></button>
+            <button class="btnLogout" routerLink="/login"><li role="presentation" >Log out</li></button>
+        </ul>
+    </nav>
+<div class="container">
+    <div class="panel-default">
+        <div class="panel-body">
+            <table class="table table-bordered table-striped ">
+                <tr>
+                    <th>Record ID</th>
+                    <th>Donation Date</th>
+                    <th>Actions</th>
+                </tr>
+                <tr *ngFor="let r of donorRecord">
+                    <td>{{r.id}}</td>
+                    <td>{{r.donationDate}}</td>
+                    <td>
+                        <button type="submit" class="btn" data-toggle="modal" data-target="#delete" data-whatever="" (click)="onDelete(close, r.id)">Delete</button>
+
+                        <div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        <h4 class="modal-title" id="exampleModalLabel1">Delete Donor Information</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>The selected will be deleted.Are you sure?</p>
+                                        <div class="modal-footer">
+                                            <a href="#">Agree</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </td>
+                </tr>
+            </table>
+            <button type="button" class="btn btn-default" routerLink="/alldonor">Back</button>
+        </div>
+    </div>
+</div>
+</body>
+
+<script>
+    $(function () {
+        setTimeout(function () {
+            $(".alert").fadeOut();
+        },1000)
+    })
+</script>
+</html>

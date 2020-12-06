@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <nav>
+        <ul class="nav nav-pills">
+            <li><h3>Blood Donor Management System (BDMS)</h3></li>
+            <button class="btnAllDonor" routerLink="/alldonor"><li role="presentation"  >All Donors</li></button>
+            <button class="btnNewDonor" routerLink="/register"><li role="presentation"  >Register</li></button>
+            <button class="btnAddRecord" routerLink="/addrecord"><li role="presentation" >Add Record</li></button>
+            <button class="btnSearch"  routerLink="/searchblood"><li role="presentation" >Search Blood</li></button>
+            <button class="btnLogout" routerLink="/login"><li role="presentation" >Log out</li></button>
+        </ul>
+    </nav>
+<div class="container">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <h4>Update Donor Information!</h4>
+            <form  [formGroup]="myForm" (ngSubmit)="onSubmit();" >
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="name">Name :</label>
+                            <input type="text" name="name" id="name" class="form-control" ngModel required #name="ngModel">
+                            <p class="text-danger" *ngIf="name.invalid">Name is required</p>
+                        </div>
+                        <div class="form-group">
+                            <label for="dateOfBirth">Date of Birth:</label>
+                            <input type="date" name="dateOfBirth" id="dateOfBirth" class="form-control" ngModel required #dateOfBirth="ngModel">
+                            <p class="text-danger" *ngIf="dateOfBirth.invalid">Date of birth is required</p>
+                        </div>
+                        <div class="form-group">
+                            <label for="bloodType">Blood Type :</label><br>
+                            <select name="bloodType" id="bloodType" ngModel required #bloodType="ngModel">
+                                <option>---Select---</option>
+                                <option>A+</option>
+                                <option>B+</option>
+                                <option>AB+</option>
+                                <option>O+</option>
+                                <option>A-</option>
+                                <option>B-</option>
+                                <option>AB-</option>
+                                <option>O-</option>
+                            </select>
+                            <p class="text-danger" *ngIf="bloodType.invalid">Blood type is required</p>
+                        </div>
+                        <div class="form-group">
+                            <label for="registerDate">Register Date :</label>
+                            <input type="date" name="registerDate" id="registerDate" class="form-control"  ngModel required #registerDate="ngModel">
+                            <p class="text-danger" *ngIf="registerDate.invalid">Regristration date is required</p>
+                        </div>
+                   </div>
+                    <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="mainPhone">Main Phone :</label>
+                        <input type="tel" name="mainPhone" id="mainPhone" class="form-control" ngModel required #mainPhone="ngModel">
+                        <p class="text-danger" *ngIf="mainPhone.invalid">Main phone is required</p>
+                    </div>
+                    <div class="form-group">
+                        <label for="homePhone">Home Phone :</label>
+                        <input type="tel" name="homePhone" id="homePhone" class="form-control" ngModel required #homePhone="ngModel">
+                        <p class="text-danger" *ngIf="homePhone.invalid">Home phone is required</p>
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Address :</label>
+                        <textarea name="address" id="address" class="form-control" ngModel required #address="ngModel"></textarea>
+                        <p class="text-danger" *ngIf="address.invalid">Address is required</p>
+                    </div>
+                    <div class="form-group">
+                        <label>Gender:</label><br>
+                        <input type="radio" id="male" name="gender" value="Male" checked ngModel required #gender="ngModel">
+
+                        <label for="male">Male</label>&nbsp;&nbsp;
+                        <input type="radio" id="female" name="gender" value="Female" ngModel required #gender="ngModel">
+                        <label for="female">Female</label>
+                        <p class="text-danger" *ngIf="gender.invalid">Gender phone is required</p>
+                    </div>
+                    </div>
+                    <button type="button" class="btn btn-default cancelBtn" routerLink="/alldonor">Cancel</button>
+                    <button type="submit" class="btn btn-default registerBtn" [disabled]="myForm.invalid" >Save Changes</button>
+               </div>
+               </form>
+                    </div>
+                    </div>
+                    </div>
+                    </body>
+                    </html>
+

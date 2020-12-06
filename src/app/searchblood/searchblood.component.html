@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <nav>
+        <ul class="nav  nav-pills">
+            <li><h3>Blood Donor Management System (BDMS)</h3></li>
+            <button class="btnAllDonor" routerLink="/alldonor"><li role="presentation"  >All Donors</li></button>
+            <button class="btnNewDonor" routerLink="/register"><li role="presentation"  >Register</li></button>
+            <button class="btnAddRecord" routerLink="/addrecord"><li role="presentation" >Add Record</li></button>
+            <button class="btnSearch"  routerLink="/searchblood"><li role="presentation" >Search Blood</li></button>
+            <button class="btnLogout" routerLink="/login"><li role="presentation" >Log out</li></button>
+        </ul>
+    </nav>
+<div class="container">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <form  ngForm #myForm="ngForm" (ngSubmit)="summit()">
+            <h4>Please Select Blood Type.....</h4>
+            <label for="bloodType">Blood Type :</label>
+            <select name="bloodType" id="bloodType"  ngModel required #bloodType="ngModel">
+                <option>---Select---</option>
+                <option>A+</option>
+                <option>B+</option>
+                <option>AB+</option>
+                <option>O+</option>
+                <option>A-</option>
+                <option>B-</option>
+                <option>AB-</option>
+                <option>O-</option>
+            </select>
+            <button type="submit" class="btn btn-danger" [disabled]="myForm.invalid">Search</button>
+            </form>
+        </div>
+</div>
+</div>
+<div class="container-fluid">
+    <div class="panel panel-default">
+    <table class="table table-bordered table-striped">
+
+    <tr>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Blood Type</th>
+
+    <th>Main Phone</th>
+    <th>Home Phone</th>
+    <th>Address</th>
+    <th>Gender</th>
+    <th>Date of Birth</th>
+    <th>Registration Date</th>
+    <th>Last Donation Date</th>
+    </tr>
+    <tr  *ngFor="let d of donor">
+
+    <td>{{d.id}}</td>
+
+    <td>{{d.name}}</td>
+
+    <td>{{d.bloodType}}</td>
+
+    <td>{{d.mainPhone}}</td>
+
+    <td>{{d.homePhone}}</td>
+
+    <td>{{d.address}}</td>
+    <td>{{d.gender}}</td>
+
+    <td>{{d.dateOfBirth}}</td>
+
+
+    <td>{{d.registerDate}}</td>
+
+    <td>{{d.lastDonationDate}}</td>
+
+    </tr>
+
+    </table>
+
+    </div>
+
+    </div>
+
+    <button type="button" class=" btn btn-default btnBack" routerLink="/alldonor">Back</button>
+</body>
+</html>
