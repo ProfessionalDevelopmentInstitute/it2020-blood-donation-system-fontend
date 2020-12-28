@@ -19,20 +19,11 @@
 <div class="container">
   <div class="panel">
     <div class="columns">
-      <form class="subHeading"  >
+      <form class="subHeading" [formGroup]="searchForm">
         <div class="form-group">
-          <label for="namelb" class="namelb">Name :</label>
-          <input type="text" name="namelb" id="namelb" class="form-control" >
-
-          <label  class="gender">Gender :</label>
-
-          <input type="radio" id="Male" name="male" value="Male" checked>
-          <label for="Male">Male </label>
-
-          <input type="radio" id="Female" name="female" value="female">
-          <label for="Female">Female </label>
-
-          <button type="submit" class="btn searchBtn">Search</button>
+          <label for="name">Name :</label>
+          <input type="text" name="name" id="name" class="form-control" formControlName="name">
+          <button type="submit" class="btn searchBtn" (click)="searchN()">Search</button>
         </div>
       </form>
     </div>
@@ -42,6 +33,7 @@
 <div class="container">
   <div class="panel panel-default">
     <div class="panel-body">
+
       <table class="table table-bordered table-striped">
         <tr>
           <th>Id</th>
@@ -54,8 +46,7 @@
           <td>{{d.name}}</td>
           <td>{{d.bloodType}}</td>
           <td>
-            <button type="submit" class="btn btn-default" data-toggle="modal" data-target="#update" data-whatever="" routerLink="/updatedonor/{{d.id}}" routerLinkActive="active">Update</button>
-            <button type="submit" class="btn btn-default" data-toggle="modal" data-target="#delete" data-whatever="" (click)="onDelete(close, d.id)">Delete</button>
+            <button type="submit" class="btn btn-default" data-toggle="modal" data-target="#update" data-whatever="" routerLink="/updatedonor/{{d.id}}" >Update</button>
             <button type="submit" class="btn btn-default" data-toggle="modal" data-target="#viewdetail" data-whatever="" routerLink="/viewdetail/{{d.id}}">Details</button>
             <button type="submit" class="btn btn-default" data-toggle="modal" data-target="#record" data-whatever="" routerLink="/record/{{d.id}}">Record</button>
 

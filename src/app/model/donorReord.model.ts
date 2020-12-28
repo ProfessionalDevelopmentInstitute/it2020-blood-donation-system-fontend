@@ -1,6 +1,13 @@
+import {Donor} from './donor.model';
+
 export class DonorRecord{
-  constructor(public id: number ,
-              public donorId: number ,
-              public donationDate: Date
-              ) { }
+  id?: number;
+  donationDate: Date;
+  donor: Donor;
+}
+
+export class DonorRecordPojo{
+  id?: number;
+  donationDate: Date;
+  donorId: string;
 }

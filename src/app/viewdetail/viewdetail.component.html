@@ -18,21 +18,20 @@
     <div class="container">
         <div class="panel">
             <div class="panel-body">
-            <form *ngFor="let d of donor">
+            <form >
                 <div class="row">
                     <div class="label1 col-sm-6">
-                        <label>ID :{{d.id}}</label><br>
-                        <label>Name :{{d.name}}</label><br>
-                        <label>Date Of Birth :{{d.dateOfBirth}}</label><br>
-                        <label>Blood Type :{{d.bloodType}}</label><br>
-                        <label>Gender :{{d.gender}}</label><br>
+                      <label>Name :&nbsp;<span>{{name}}</span></label><br>
+                      <label>Date Of Birth :&nbsp;<span>{{dateOfBirth}}</span></label><br>
+                      <label>Blood Type :&nbsp;<span>{{bloodType}}</span></label><br>
+                      <label>Gender :&nbsp;<span>{{gender}}</span></label><br>
+                      <label>Address :&nbsp;<span>{{address}}</span></label><br>
                     </div>
                     <div class="label2 col-sm-6">
-                        <label>Main Phone No :{{d.mainPhone}}</label><br>
-                        <label>Home Phone No :{{d.homePhone}}</label><br>
-                        <label>Address :{{d.address}}</label><br>
-                        <label>Registration Date:{{d.registerDate}}</label><br>
-                        <label>Last Donation Date :{{d.lastDonationDate}}</label><br>
+                      <label>Main Phone No :&nbsp;<span>{{mainPhone}}</span></label><br>
+                      <label>Home Phone No :&nbsp;<span>{{homePhone}}</span></label><br>
+                      <label>Registration Date:&nbsp;<span>{{registerDate}}</span></label><br>
+                      <label>Last Donation Date :&nbsp;<span>{{lastDonationDate}}</span></label><br>
 
                     </div>
                 </div>

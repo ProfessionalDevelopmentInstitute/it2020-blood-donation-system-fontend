@@ -50,14 +50,14 @@ export class RegisterComponent implements OnInit {
 }
 interface Donor{
   id: number;
-  name: string;
-  gender: string;
-  bloodType: string;
-  dateOfBirth: Date;
-  address: string;
-  mainPhone: string;
-  homePhone: string;
-  registerDate: Date;
-  lastDonationDate?: Date;
-}
+   name: string;
+   gender: string;
+   bloodType: string;
+   dateOfBirth: Date;
+   address: string;
+   mainPhone: string;
+   homePhone: string;
+   registerDate: Date;
+   lastDonationDate?: Date;
+ }
 

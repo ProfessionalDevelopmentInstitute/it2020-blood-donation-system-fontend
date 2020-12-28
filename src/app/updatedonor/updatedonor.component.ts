@@ -32,7 +32,6 @@ export class UpdatedonorComponent implements OnInit {
       const idparam = 'id';
       this.id = param[idparam] ;
       let donor: Donor = null;
-      console.log(donor);
       console.log(this.id);
       this.donorService.getDonorById(this.id).subscribe(
         value => {
@@ -45,18 +44,18 @@ export class UpdatedonorComponent implements OnInit {
   );
 }
   onSubmit(): void {
-    const donor: Donor = new Donor(
-      this.id,
-      this.myForm.value.name,
-      this.myForm.value.gender,
-      this.myForm.value.bloodType,
-      this.myForm.value.dateOfBirth,
-      this.myForm.value.address,
-      this.myForm.value.mainPhone,
-      this.myForm.value.homePhone,
-      this.myForm.value.registerDate,
-      this.myForm.value.lastDonationDate
-    );
+    const donor: Donor = {
+      id: this.id,
+      name: this.myForm.value.name,
+      gender: this.myForm.value.gender,
+      bloodType: this.myForm.value.bloodType,
+      dateOfBirth: this.myForm.value.dateOfBirth,
+      address: this.myForm.value.address,
+      mainPhone: this.myForm.value.mainPhone,
+      homePhone: this.myForm.value.homePhone,
+      registerDate: this.myForm.value.registerDate,
+      lastDonationDate: this.myForm.value.lastDonationDate
+    };
     this.donorService.updateDonor(donor).subscribe(
       value => {
         console.log(value);
@@ -71,3 +70,15 @@ export class UpdatedonorComponent implements OnInit {
     );
   }
 }
+// interface Donor{
+//   id: number;
+//   name: string;
+//   gender: string;
+//   bloodType: string;
+//   dateOfBirth: Date;
+//   address: string;
+//   mainPhone: string;
+//   homePhone: string;
+//   registerDate: Date;
+//   lastDonationDate?: Date;
+// }

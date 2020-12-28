@@ -18,10 +18,10 @@
 <div class="container">
     <div class="panel panel-default">
         <div class="panel-body">
-            <form  ngForm #myForm="ngForm" (ngSubmit)="summit()">
+            <form  class="subHeading" [formGroup]="searchForm">
             <h4>Please Select Blood Type.....</h4>
             <label for="bloodType">Blood Type :</label>
-            <select name="bloodType" id="bloodType"  ngModel required #bloodType="ngModel">
+            <select name="bloodType" id="bloodType" formControlName="bloodType">
                 <option>---Select---</option>
                 <option>A+</option>
                 <option>B+</option>
@@ -32,7 +32,7 @@
                 <option>AB-</option>
                 <option>O-</option>
             </select>
-            <button type="submit" class="btn btn-danger" [disabled]="myForm.invalid">Search</button>
+            <button type="submit" class="btn btn-danger" (click)="searchN()">Search</button>
             </form>
         </div>
 </div>
@@ -54,27 +54,26 @@
     <th>Registration Date</th>
     <th>Last Donation Date</th>
     </tr>
-    <tr  *ngFor="let d of donor">
+   <tr  *ngFor="let d of donor">
+     <td>{{d.id}}</td>
 
-    <td>{{d.id}}</td>
+     <td>{{d.name}}</td>
 
-    <td>{{d.name}}</td>
+     <td>{{d.bloodType}}</td>
 
-    <td>{{d.bloodType}}</td>
+     <td>{{d.mainPhone}}</td>
 
-    <td>{{d.mainPhone}}</td>
+     <td>{{d.homePhone}}</td>
 
-    <td>{{d.homePhone}}</td>
+     <td>{{d.address}}</td>
 
-    <td>{{d.address}}</td>
-    <td>{{d.gender}}</td>
+     <td>{{d.gender}}</td>
 
-    <td>{{d.dateOfBirth}}</td>
+     <td>{{d.dateOfBirth}}</td>
 
+     <td>{{d.registerDate}}</td>
 
-    <td>{{d.registerDate}}</td>
-
-    <td>{{d.lastDonationDate}}</td>
+     <td>{{d.lastDonationDate}}</td>
 
     </tr>
 

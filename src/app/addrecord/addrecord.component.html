@@ -19,15 +19,17 @@
     <div class="panel">
         <div class="row">
             <div class="panel-body">
-                <form  ngForm #myForm="ngForm" (ngSubmit)="summit()">
+                <form  [formGroup]="myForm" (ngSubmit)="onSubmit();">
                     <h4>Adding New Record</h4>
                   <div class="form-group label1">
-                    <label for="donorId">Donor Id :</label>
-                    <input type="text" name="donorId" id="donorId" class="form-group" required>
+                    <label>Donor Id :</label>
+                    <input type="text"  class="form-group"  formControlName="donorId">
+                    <!--<p class="text-danger" *ngIf="donorId.invalid">Donor Id is required</p>-->
                   </div>
                     <div class="form-group label2">
-                        <label for="donation-date">Donation Date :</label>
-                        <input type="date" name="d-date" id="donation-date" class="form-group" required>
+                        <label>Donation Date :</label>
+                        <input type="date" class="form-group"  formControlName="donationDate">
+                      <!--<p class="text-danger" *ngIf="donationDate.invalid">Donation date is required</p>-->
                     </div>
                     <button type="button" class="btn btnCancel" routerLink="/alldonor">Cancel</button>
                     <button type="submit" class="btn btnAdd" [disabled]="myForm.invalid">Add</button>

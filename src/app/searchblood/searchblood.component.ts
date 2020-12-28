@@ -1,9 +1,8 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
-import {ApiService} from '../service/api.service';
-import {NgForm} from '@angular/forms';
-import {Router} from '@angular/router';
+import {Component, OnInit} from '@angular/core';
+import {FormControl, FormGroup} from '@angular/forms';
 import {DonorService} from '../service/donor.service';
-import {DonorRecord} from '../model/donorReord.model';
+import {Donor} from '../model/donor.model';
+import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-searchblood',
@@ -11,37 +10,27 @@ import {DonorRecord} from '../model/donorReord.model';
   styleUrls: ['./searchblood.component.css']
 })
 export class SearchbloodComponent implements OnInit {
-  @ViewChild('myForm')
-  myForm: NgForm;
-   donor: Donor[];
-
-  constructor(public router: Router, public donorService: DonorService, private apiService: ApiService) {
+  donor: Donor[];
+  closeResult: string;
+  searchForm: FormGroup;
+  do: any;
+constructor(public donorService: DonorService, private modalService: NgbModal) {
+  this.searchForm = new FormGroup({
+    bloodType: new FormControl('')
+  });
   }
-
-  ngOnInit(): void {}
-  summit(): void {
-    const donor: Donor = {
-      id: 0,
-      bloodType: this.myForm.value.bloodType
-    };
-    this.donorService.findByBloodTypeAndAvailableDate(this.donor).subscribe(
+  searchN(): void{
+    const bloodType = this.searchForm.value.bloodType;
+    console.log(bloodType);
+    this.donorService.findByBloodTypeAndAvailableDate(bloodType).subscribe(
       value => {
+        this.donor = value;
         console.log(value);
-        this.donor = value.result;
       }
     );
   }
+  ngOnInit(): void {
+  }
 }
-interface Donor{
-  id: number;
-  name?: string;
-  gender?: string;
-  bloodType?: string;
-  dateOfBirth?: Date;
-  address?: string;
-  mainPhone?: string;
-  homePhone?: string;
-  registerDate?: Date;
-  lastDonationDate?: Date;
-}
+
 
